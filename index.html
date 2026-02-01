@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Guambras a Cuchos - GGJ 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            transition: background-color 0.7s ease, color 0.7s ease;
+        }
+        .pixelated {
+            image-rendering: pixelated;
+        }
+        
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00fff9;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(21px, 9999px, 86px, 0); }
+            20% { clip: rect(6px, 9999px, 84px, 0); }
+            40% { clip: rect(76px, 9999px, 11px, 0); }
+            60% { clip: rect(42px, 9999px, 86px, 0); }
+            80% { clip: rect(2px, 9999px, 3px, 0); }
+            100% { clip: rect(98px, 9999px, 63px, 0); }
+        }
+
+        /* 8-bit Border Style - NES.css inspired */
+        .nes-like-border {
+            box-shadow: -4px 0 0 0 currentColor,
+                        4px 0 0 0 currentColor,
+                        0 -4px 0 0 currentColor,
+                        0 4px 0 0 currentColor;
+            margin: 4px;
+        }
+        
+        /* Custom Scrollbar for Chrome/Safari/Edge */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #222;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #666; 
+            border: 2px solid #222;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #888; 
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Niñez
+                        'child-bg': '#E0F2F1', // Teal 50
+                        'child-accent': '#00695C', // Teal 800
+                        'child-btn': '#26A69A', 
+
+                        // Adolescencia
+                        'teen-bg': '#2E003E', // Deep Purple
+                        'teen-accent': '#00FF00', // Neon Green
+                        'teen-btn': '#D500F9',
+
+                        // Adultez
+                        'adult-bg': '#1E293B', // Slate 800
+                        'adult-accent': '#94A3B8', // Slate 400
+                        'adult-btn': '#475569',
+
+                        // Vejez
+                        'old-bg': '#FFF3E0', // Orange 50 (Sepia tone)
+                        'old-accent': '#5D4037', // Brown 700
+                        'old-btn': '#8D6E63',
+                    },
+                    boxShadow: {
+                        'pixel': '4px 4px 0px 0px rgba(0,0,0,0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-child-bg text-child-accent antialiased selection:bg-black selection:text-white">
+
+    <!-- Hero Section -->
+    <header id="hero" class="min-h-screen flex flex-col items-center justify-center p-6 text-center relative overflow-hidden" data-theme="child">
+        <h1 class="text-4xl md:text-7xl mb-6 glitch font-bold tracking-tighter" data-text="De Guambras a Cuchos">De Guambras a Cuchos</h1>
+        
+        <p class="text-xs md:text-sm mb-8 max-w-4xl font-bold tracking-wide uppercase opacity-80">
+            Jose Taipe &bull; Carlos Parreño &bull; Sara Piedra &bull; Nombre Apellido 4 &bull; Daniel Conde
+        </p>
+
+        <p class="text-base md:text-xl mb-12 max-w-2xl leading-relaxed">
+            Una novela visual sobre crecer, cambiar y encontrarse a uno mismo.
+        </p>
+        <a href="https://globalgamejam.org/games/2026/de-guambras-cuchos-4" target="_blank" class="nes-like-border px-8 py-4 text-sm md:text-base font-bold bg-white hover:scale-105 active:scale-95 transition-transform text-current">
+            [ VER EN GGJ > ]
+        </a>
+        
+        <div class="absolute bottom-8 animate-bounce">
+             ▼ SCROLL ▼
+        </div>
+    </header>
+
+    <!-- Main Cycle Content -->
+    <main>
+        
+        <!-- Niñez -->
+        <section id="ninez" class="min-h-screen py-20 flex flex-col md:flex-row items-center justify-center gap-12 px-6" data-theme="child">
+            <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1">
+                <div class="w-72 h-72 relative nes-like-border bg-white/20 p-4 flex items-center justify-center">
+                    <img src="img/ninez_mask.png" onerror="this.src='https://placehold.co/200x200/png?text=Niñez+Mask'" alt="Máscara de Niñez" class="pixelated w-56 h-56 object-contain drop-shadow-md hover:scale-110 transition-transform duration-300">
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:text-left text-center order-1 md:order-2 max-w-lg">
+                <span class="inline-block px-3 py-1 mb-4 text-xs bg-black text-white">ETAPA 1</span>
+                <h2 class="text-3xl md:text-5xl mb-6">La Niñez</h2>
+                <p class="leading-loose text-sm md:text-base opacity-90">
+                    El mundo es gigante. La inocencia es nuestro escudo. Aquí, todo es juego y descubrimiento. 
+                    <br><br>
+                    ¿Recuerdas cuando tu única preocupación era que no se oculte el sol?
+                </p>
+            </div>
+        </section>
+
+        <!-- Adolescencia -->
+        <section id="adolescencia" class="min-h-screen py-20 flex flex-col md:flex-row-reverse items-center justify-center gap-12 px-6" data-theme="teen">
+            <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1">
+                <div class="w-72 h-72 relative nes-like-border bg-white/10 p-4 flex items-center justify-center border-2 border-current">
+                    <img src="img/adolescencia_mask.png" onerror="this.src='https://placehold.co/200x200/png?text=Adolescencia+Mask'" alt="Máscara de Adolescencia" class="pixelated w-56 h-56 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] hover:rotate-6 transition-transform duration-300">
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:text-right text-center order-1 md:order-2 max-w-lg">
+                <span class="inline-block px-3 py-1 mb-4 text-xs bg-white text-black">ETAPA 2</span>
+                <h2 class="text-3xl md:text-5xl mb-6 glitch" data-text="La Adolescencia">La Adolescencia</h2>
+                <p class="leading-loose text-sm md:text-base opacity-90">
+                    Ruido. Caos. Búsqueda.
+                    <br><br>
+                    Colores neón en la oscuridad. Intentamos encajar mientras luchamos por ser diferentes. Las máscaras se vuelven más complejas.
+                </p>
+            </div>
+        </section>
+
+        <!-- Adultez -->
+        <section id="adultez" class="min-h-screen py-20 flex flex-col md:flex-row items-center justify-center gap-12 px-6" data-theme="adult">
+            <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1">
+                <div class="w-72 h-72 relative nes-like-border bg-slate-700/50 p-4 flex items-center justify-center">
+                    <img src="img/adultez_mask.png" onerror="this.src='https://placehold.co/200x200/png?text=Adultez+Mask'" alt="Máscara de Adultez" class="pixelated w-56 h-56 object-contain grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:text-left text-center order-1 md:order-2 max-w-lg">
+                <span class="inline-block px-3 py-1 mb-4 text-xs bg-blue-500 text-white">ETAPA 3</span>
+                <h2 class="text-3xl md:text-5xl mb-6">La Adultez</h2>
+                <p class="leading-loose text-sm md:text-base opacity-90">
+                    Estabilidad y sombras. El peso de las decisiones.
+                    <br><br>
+                    Los colores se apagan pero ganan profundidad. Construimos sobre lo que quedó, reparando grietas con experiencia.
+                </p>
+            </div>
+        </section>
+
+        <!-- Vejez -->
+        <section id="vejez" class="min-h-screen py-20 flex flex-col md:flex-row-reverse items-center justify-center gap-12 px-6" data-theme="old">
+            <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1">
+                <div class="w-72 h-72 relative nes-like-border bg-orange-900/10 p-4 flex items-center justify-center">
+                    <img src="img/vejez_mask.png" onerror="this.src='https://placehold.co/200x200/png?text=Vejez+Mask'" alt="Máscara de Vejez" class="pixelated w-56 h-56 object-contain sepia hover:sepia-0 transition-all duration-500">
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:text-right text-center order-1 md:order-2 max-w-lg">
+                <span class="inline-block px-3 py-1 mb-4 text-xs bg-orange-800 text-white">ETAPA 4</span>
+                <h2 class="text-3xl md:text-5xl mb-6">La Vejez</h2>
+                <p class="leading-loose text-sm md:text-base opacity-90">
+                    El atardecer. La calma.
+                    <br><br>
+                    Miramos atrás no con arrepentimiento, sino con entendimiento. Las máscaras caen. Solo queda lo que fuimos.
+                </p>
+            </div>
+        </section>
+
+        <!-- Personajes -->
+        <section id="personajes" class="py-24 px-6 bg-black text-white" data-theme="characters">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl text-center mb-8 text-yellow-400">SELECT CHARACTER</h2>
+                
+                <!-- Stage Selector -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button onclick="changeCharacterStage('ninez')" class="stage-selector px-4 py-2 border-2 border-white hover:bg-white hover:text-black transition-colors bg-white text-black" data-stage="ninez">NIÑEZ</button>
+                    <button onclick="changeCharacterStage('adolescencia')" class="stage-selector px-4 py-2 border-2 border-white hover:bg-white hover:text-black transition-colors" data-stage="adolescencia">ADOLESCENCIA</button>
+                    <button onclick="changeCharacterStage('adultez')" class="stage-selector px-4 py-2 border-2 border-white hover:bg-white hover:text-black transition-colors" data-stage="adultez">ADULTEZ</button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Character Card 1 -->
+                    <div class="border-4 border-white p-4 hover:bg-zinc-900 transition-colors group cursor-pointer">
+                        <div class="bg-blue-500/20 aspect-square flex items-center justify-center mb-4 border-2 border-dashed border-white/30 group-hover:border-white">
+                            <img id="img-manguito" src="img/manguito_ninez.png" onerror="this.src='https://placehold.co/150x150/png?text=Manguito+Ninez'" class="pixelated w-64 h-64 object-contain transition-all duration-300">
+                        </div>
+                        <h3 class="text-xl text-yellow-400 mb-2">Manguito</h3>
+                        <p class="text-xs leading-relaxed text-gray-300">
+                            Perro mestizo. <br>
+                            Nobleza pura. Ve el mundo con ojos de esperanza.
+                        </p>
+                    </div>
+
+                    <!-- Character Card 2 -->
+                    <div class="border-4 border-white p-4 hover:bg-zinc-900 transition-colors group cursor-pointer">
+                        <div class="bg-pink-500/20 aspect-square flex items-center justify-center mb-4 border-2 border-dashed border-white/30 group-hover:border-white">
+                            <img id="img-pixy" src="img/pixy_ninez.png" onerror="this.src='https://placehold.co/150x150/png?text=Pixy+Ninez'" class="pixelated w-64 h-64 object-contain transition-all duration-300">
+                        </div>
+                        <h3 class="text-xl text-yellow-400 mb-2">Pixy</h3>
+                        <p class="text-xs leading-relaxed text-gray-300">
+                            Conejo. <br>
+                            Ansiedad hiperactiva. Salta antes de mirar.
+                        </p>
+                    </div>
+
+                    <!-- Character Card 3 -->
+                    <div class="border-4 border-white p-4 hover:bg-zinc-900 transition-colors group cursor-pointer">
+                        <div class="bg-green-500/20 aspect-square flex items-center justify-center mb-4 border-2 border-dashed border-white/30 group-hover:border-white">
+                            <img id="img-sheldon" src="img/sheldon_ninez.png" onerror="this.src='https://placehold.co/150x150/png?text=Sheldon+Ninez'" class="pixelated w-64 h-64 object-contain transition-all duration-300">
+                        </div>
+                        <h3 class="text-xl text-yellow-400 mb-2">Sheldon</h3>
+                        <p class="text-xs leading-relaxed text-gray-300">
+                            Zorro. <br>
+                            Astucia silenciosa. Siempre tiene un plan oculto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900 text-gray-400 py-12 text-center text-xs border-t-4 border-zinc-700">
+        <p class="mb-4">GLOBAL GAME JAM 2026 - QUITO</p>
+        <p class="mb-8">Hecho por Team "Guambras a Cuchos"</p>
+        <div class="inline-block border-2 border-gray-600 px-4 py-2 hover:bg-gray-800 transition-colors cursor-default">
+            GGJ 2026
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Theme System
+        const themes = {
+            child: ['bg-child-bg', 'text-child-accent'],
+            teen: ['bg-teen-bg', 'text-teen-accent'],
+            adult: ['bg-adult-bg', 'text-adult-accent'],
+            old: ['bg-old-bg', 'text-old-accent'],
+            characters: ['bg-black', 'text-white'] // Optional, for safety
+        };
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -40% 0px', // Activate when section is in middle of screen
+            threshold: 0
+        };
+
+        const themeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    const themeName = entry.target.dataset.theme;
+                    
+                    if (themes[themeName]) {
+                        // Apply theme
+                        const body = document.body;
+                        
+                        // Clean previous theme classes (hard reset for simplicity in this demo)
+                        // A more robust way handles previous specific classes, 
+                        // but since we know the exact set `themes`, we can iterate all values.
+                        Object.values(themes).forEach(classNameList => {
+                            classNameList.forEach(cls => body.classList.remove(cls));
+                        });
+
+                        // Add new
+                        themes[themeName].forEach(cls => body.classList.add(cls));
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections with data-theme
+        document.querySelectorAll('[data-theme]').forEach(section => {
+            themeObserver.observe(section);
+        });
+
+        // Character Stage System
+        const characterData = {
+            manguito: {
+                ninez: 'img/manguito_ninez.png',
+                adolescencia: 'img/manguito_adolescencia.png',
+                adultez: 'img/manguito_adultez.png'
+            },
+            pixy: {
+                ninez: 'img/pixy_ninez.png',
+                adolescencia: 'img/pixy_adolescencia.png',
+                adultez: 'img/pixy_adultez.png'
+            },
+            sheldon: {
+                ninez: 'img/sheldon_ninez.png',
+                adolescencia: 'img/sheldon_adolescencia.png',
+                adultez: 'img/sheldon_adultez.png'
+            }
+        };
+
+        function changeCharacterStage(stage) {
+            // Update buttons
+            document.querySelectorAll('.stage-selector').forEach(btn => {
+                if(btn.dataset.stage === stage) {
+                     btn.classList.add('bg-white', 'text-black');
+                } else {
+                     btn.classList.remove('bg-white', 'text-black');
+                }
+            });
+
+            // Update images
+            updateCharacterImage('manguito', stage);
+            updateCharacterImage('pixy', stage);
+            updateCharacterImage('sheldon', stage);
+        }
+
+        function updateCharacterImage(charName, stage) {
+            const img = document.getElementById(`img-${charName}`);
+            if(!img) return;
+            
+            const src = characterData[charName][stage];
+            img.src = src;
+            
+            // Fallback to placeholder if local image is missing
+            img.onerror = function() {
+                this.onerror = null; 
+                this.src = `https://placehold.co/150x150/png?text=${charName.toUpperCase()}+${stage.toUpperCase()}`;
+            };
+        }
+    </script>
+</body>
+</html>
