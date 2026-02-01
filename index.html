@@ -109,7 +109,12 @@
 
     <!-- Hero Section -->
     <header id="hero" class="min-h-screen flex flex-col items-center justify-center p-6 text-center relative overflow-hidden" data-theme="child">
-        <h1 class="text-4xl md:text-7xl mb-6 glitch font-bold tracking-tighter" data-text="De Guambras a Cuchos">De Guambras a Cuchos</h1>
+        <!-- Game Cover / Logo -->
+        <div class="mb-8 w-full max-w-4xl">
+            <img src="img/landing.png" onerror="this.style.display='none'; document.getElementById('fallback-title').classList.remove('hidden');" alt="De Guambras a Cuchos" class="pixelated w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700">
+            <!-- Fallback Text Title (Hidden by default, shows if image missing) -->
+            <h1 id="fallback-title" class="hidden text-4xl md:text-7xl glitch font-bold tracking-tighter" data-text="De Guambras a Cuchos">De Guambras a Cuchos</h1>
+        </div>
         
         <p class="text-xs md:text-sm mb-8 max-w-4xl font-bold tracking-wide uppercase opacity-80">
             José Taipe &bull; Carlos Parreño &bull; Sara Piedra &bull; Martina Núñez &bull; Daniel Conde
